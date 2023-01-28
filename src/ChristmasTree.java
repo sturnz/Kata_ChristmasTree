@@ -1,14 +1,17 @@
 public class ChristmasTree {
+    String styleOfTree =  "X";
+    String styleOfTrunk = "#";
+
     public String GetYourTree(int heightOfTree){
 
         if(heightOfTree <= 0) return "No tree for you :(";
 
         StringBuilder christmasTree = new StringBuilder();
 
-        for (int i = 1; i <= heightOfTree; i++) {
+        for (int treeRow = 1; treeRow <= heightOfTree; treeRow++) {
 
-            christmasTree   .append( GetWhiteSpaces(heightOfTree, i))
-                            .append( GetGreenery(i))
+            christmasTree   .append( GetWhiteSpaces(heightOfTree, treeRow))
+                            .append( GetGreenery(treeRow))
                             .append( "\n");
         }
 
@@ -17,18 +20,18 @@ public class ChristmasTree {
         return String.valueOf(christmasTree);
     }
 
-    String GetWhiteSpaces(int heightOfTree, int i){
+    String GetWhiteSpaces(int heightOfTree, int treeRow){
 
-        return " ".repeat(heightOfTree - i);
+        return " ".repeat(heightOfTree - treeRow);
     }
 
-    String GetGreenery(int i){
+    String GetGreenery(int treeRow){
 
-        return "X".repeat(2*i-1);
+        return styleOfTree.repeat(2*treeRow-1);
     }
 
     String GetTreeTrunk(int heightOfTree){
 
-        return GetWhiteSpaces(heightOfTree, 1) + "#";
+        return GetWhiteSpaces(heightOfTree, 1) + styleOfTrunk;
     }
 }

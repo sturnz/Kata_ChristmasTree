@@ -27,7 +27,7 @@ public class ChristmasTree {
 
     String GetGreenery(int treeRow){
 
-        return styleOfTree.repeat(2*treeRow-1);
+        return styleOfTree.repeat(2 * treeRow - 1);
     }
 
     String GetTreeTrunk(int heightOfTree){
